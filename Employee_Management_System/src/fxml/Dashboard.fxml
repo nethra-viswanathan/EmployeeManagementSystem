@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1481.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+   <children>
+      <HBox layoutX="88.0" layoutY="198.0" prefHeight="190.0" prefWidth="1297.0" spacing="100.0">
+         <children>
+            <Pane prefHeight="190.0" prefWidth="401.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5);">
+               <children>
+                  <Label fx:id="billHours" layoutX="113.0" layoutY="126.0" text="Total No of Employees" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="noOfEmployees" alignment="CENTER" layoutX="121.0" layoutY="41.0" prefHeight="68.0" prefWidth="123.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="190.0" prefWidth="401.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5);">
+               <children>
+                  <Label layoutX="137.0" layoutY="125.0" text="Billable Hours" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billHours" alignment="CENTER" layoutX="128.0" layoutY="41.0" prefHeight="68.0" prefWidth="113.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="401.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5);">
+               <children>
+                  <Label layoutX="149.0" layoutY="124.0" text="Holidays" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="146.0" layoutY="35.0" prefHeight="68.0" prefWidth="59.0" text="10" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+    <AnchorPane layoutX="34.0" layoutY="686.0" minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="569.0" />
+      <Pane layoutX="64.0" layoutY="55.0" prefHeight="86.0" prefWidth="1361.0" style="-fx-border-color: #11488f; -fx-border-style: hidden hidden solid hidden; -fx-border-width: 3px;">
+         <children>
+            <Label layoutX="29.0" layoutY="25.0" prefHeight="37.0" prefWidth="439.0" text="Dashboard" textFill="#11488f">
+               <font>
+                  <Font name="Helvetica Neue" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="logout" fitHeight="37.0" fitWidth="35.0" layoutX="1315.0" layoutY="31.0" onMousePressed="#logOut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logout.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dashboardHome" fitHeight="37.0" fitWidth="35.0" layoutX="1253.0" layoutY="31.0" onMousePressed="#redirectHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="dashboardTable" layoutX="88.0" layoutY="420.0" prefHeight="255.0" prefWidth="1294.0" styleClass="dashboardTable" stylesheets="@../home/style.css">
+        <columns>
+          <TableColumn fx:id="name" minWidth="0.0" prefWidth="408.0" text="Employee Name" />
+            <TableColumn fx:id="id" prefWidth="277.0" text="ID" />
+            <TableColumn fx:id="date" minWidth="0.0" prefWidth="379.0" text="Date &amp; Time" />
+            <TableColumn fx:id="hours" prefWidth="229.0" text="Hours" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
